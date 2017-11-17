@@ -19,18 +19,18 @@ float eyPos=10;
 
 //This function makes the size of the window 800x600.
 void setup() {
-  size(800, 600);  //Makes the size of the window 800x600
-  background(100);  //Makes grey background
+  size(800, 600);         //Makes the size of the window 800x600
+  background(100);        //Makes grey background
 }
 
 //This function generates a random quilt size when key is pressed
 void keyPressed() {
-  background(100);  //Makes grey background
-  drawColumn();  //Calls drawColumn function
-  drawRow();  //Calls drawRow function
-  b=random(256);  //Produces a random value for int b
+  background(100);        //Makes grey background
+  drawColumn();           //Calls drawColumn function
+  drawRow();              //Calls drawRow function
+  b=random(256);          //Produces a random value for int b
   panelSize=panelSize+1;  //Makes the panel size grow after each click
-  w=w+1;  //Allows for offscreen image to grow in size
+  w=w+1;                  //Allows for offscreen image to grow in size
   h=h+1;  //Allows for offscreen image to grow in size
 }
 
@@ -43,10 +43,10 @@ void draw() {
 void drawQuilt() {
   for (float x = 0; x<=row; x=x+panelSize) {
     for (float y = 0; y<=col; y=y+panelSize) {
-      drawPanel(x+10, y+10, w, h);  //Provides offscreen image
+      drawPanel(x+10, y+10, w, h);      //Provides offscreen image
       if ((x+y)%2==0) {
-        fill(x, y, b);  //Makes fill for the panels
-        rect(x+10, y+10, panelSize, panelSize);  //This is the panel
+        fill(x, y, b);                  //Makes fill for the panels
+        rect(x+10, y+10, panelSize, panelSize);             //This is the panel
       }
     }
   }
@@ -54,12 +54,12 @@ void drawQuilt() {
 
 //This function randomizes the row quantity
 void drawRow() {
-  row = random(750);  //Provides random number for row
+  row = random(750);          //Provides random number for row
 }
 
 //This function randomizes the column quantity
 void drawColumn() {
-  col=random(550);  //Provides random munber for column
+  col=random(550);            //Provides random munber for column
 }
 
 //This function will be the offscreen image
